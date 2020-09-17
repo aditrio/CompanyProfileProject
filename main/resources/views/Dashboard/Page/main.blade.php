@@ -1,0 +1,2 @@
+@extends('Dashboard.Layout.app')
+

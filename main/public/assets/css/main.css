@@ -1,0 +1,76 @@
+
+.sidebar {
+
+	height: 650px;
+	width: 100%;
+
+}
+
+.header {
+	max-height: 50px;
+}
+
+.card-footer{
+	border-top-color: #fff !important;
+}
+
+.card {
+	max-width: 100%; 
+	border-radius:10px; 
+}
+
+
+.andro-card {
+	max-width: 20rem; 
+	border-radius:15px; 
+	background: rgb(245,226,177);
+	background: linear-gradient(90deg, rgba(245,226,177,1) 0%, rgba(244,207,111,1) 100%);
+	font-weight: bold;
+}
+
+.web-card {
+	max-width: 20rem; 
+	border-radius:15px;
+	background: rgb(38,188,175);
+	background: linear-gradient(90deg, rgba(38,188,175,1) 0%, rgba(5,149,171,1) 100%);
+	font-weight: bold;
+}
+
+.desktop-card {
+	background: rgb(92,169,255);
+	background: linear-gradient(90deg, rgba(92,169,255,1) 0%, rgba(102,123,255,1) 100%); 
+	max-width: 20rem; 
+	border-radius:15px;
+	font-weight: bold;
+
+}
+
+.const-card {
+	background: rgb(253,87,148);
+	background: linear-gradient(90deg, rgba(253,87,148,1) 0%, rgba(255,105,155,1) 100%); 
+	max-width: 20rem; 
+	border-radius:15px;
+	font-weight: bold;
+}
+
+.btn-action {
+	border-radius: 10px;
+	background-color: #3AC4AD;
+}
+
+.dash-nav {
+	margin-top: 100px;
+	padding: 1px;
+}
+
+.dash-nav-item {
+
+	list-style-type: none;
+}
+
+.active {
+	 display: inline; 
+	 border-left: 2px solid; 
+	 padding-left: 0.5em;
+	 color: green;
+}
