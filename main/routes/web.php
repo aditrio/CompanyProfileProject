@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashboard', 'DashController@index')->name('dash.index');
 
+Route::post('/news/store', 'NewsController@store')->name('news.store');
+

@@ -1,4 +1,9 @@
+table {
+    display: block;
+    overflow-x: auto;
+    
 
+}
 .sidebar {
 
 	height: 650px;
