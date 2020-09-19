@@ -79,3 +79,9 @@ table {
 	 padding-left: 0.5em;
 	 color: green;
 }
+
+.selected { 
+
+	background-color: grey;
+
+}

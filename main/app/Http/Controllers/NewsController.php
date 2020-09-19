@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\News;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -84,9 +86,22 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update($id, Request $request)
     {
-        //
+        $data = News::find($id);
+
+        $data->update([
+
+            "title" => $request->title,
+            "content" => $request->content,
+            "imagePath" => $this->uploadImage($request),
+            "slug" => str_slug($request->title),
+
+        ]);
+
+        $data->save();
+
+        return redirect()->back()->with('success', "Berhasil diubah");
     }
 
     /**
@@ -98,6 +113,16 @@ class NewsController extends Controller
     public function destroy(News $news)
     {
         //
+    }
+
+    public function delete($id){
+
+        $data = News::find($id);
+
+        $data->delete();
+
+        return redirect()->back()->with('success', 'Berhasil dihapus !!');
+
     }
 
     public static function uploadImage($req){
@@ -112,5 +137,17 @@ class NewsController extends Controller
         return $imageName;
     }
 
+    public function getById($id){
+
+        $data =  DB::table('news')->where('id', $id)->first();
+
+        Return response()->json($data);
+    }
+
 
 }
+
+
+
+
+

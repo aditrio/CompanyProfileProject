@@ -23,3 +23,10 @@ Route::get('/dashboard', 'DashController@index')->name('dash.index');
 
 Route::post('/news/store', 'NewsController@store')->name('news.store');
 
+Route::put('/news/update/{id}', 'NewsController@update')->name('news.update');
+
+Route::DELETE('/news/delete/{id}', 'NewsController@delete')->name('news.delete');
+
+
+
+Route::get('/get/news/{id}', 'NewsController@getById');

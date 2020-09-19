@@ -79,7 +79,7 @@
 								<h5 class="card-text">Edit Berita</h5>
 							</div>
 							<div class="card-body">
-								<table class="table table-striped " style="height: 150px !important; width: 100% !important;">
+								<table class="table " id="table-news" style="height: 150px !important; width: 100% !important;">
 									<thead>
 										
 									</thead>
@@ -87,10 +87,11 @@
 								  	@foreach ($data as $da)
 								  		
 									    <tr>
+
 									      <th scope="row">◉</th>
+									  	  <td hidden="hidden">{{$da->id}}</td>
 									      <td>{{ Str::limit( $da->title , 70) }}</td>
 									      <td>{{$da->view}}</td>
-									  
 									    </tr>
 								  	@endforeach
 								    
@@ -101,8 +102,8 @@
 							<div class="card-footer">
 								<button type="button" class="btn btn-success btn-action" data-toggle="modal" data-target="#exampleModalCenter">Tambah</button>
 								
-								<button type="button" class="btn btn-success btn-action"data-toggle="modal" data-target="#update-news">Update</button>
-								<button type="button" class="btn btn-success btn-action">Hapus</button>
+								<button type="button" id="btn-update-news" disabled class="btn btn-success btn-action"data-toggle="modal" data-target="#update-news">Update</button>
+								<button type="button" id="btn-delete-news" disabled data-toggle="modal" data-target="#modal-delete-news" class="btn btn-success btn-action">Hapus</button>
 							</div>
 						</div>
 					</div>
@@ -391,5 +392,7 @@
 
 @include('Dashboard.modal.news.store')
 @include('Dashboard.modal.news.update')
+@include('Dashboard.modal.news.delete')
+
 
 @endsection				
