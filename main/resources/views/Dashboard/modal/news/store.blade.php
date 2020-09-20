@@ -15,17 +15,25 @@
 	      <div class="modal-body">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">News Title</label>
-			    <input type="text" class="form-control" id="title" name="title" placeholder="Title Here ....">
+			    <input required="" type="text" class="form-control" id="title" name="title" placeholder="Title Here ....">
 			    
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">News Content</label>
-			    <input type="text" class="form-control" id="content" name="content" placeholder="Content Here....">
+			    <input required="" type="text" class="form-control" id="content" name="content" placeholder="Content Here....">
 			  </div>		
+
+			  <div class="form-group form-inline">
+				  <input class="form-check-input" id="headline" name="headline" type="checkbox" value="1" id="defaultCheck1">
+				  <label class="form-check-label" for="defaultCheck1">
+				     Headline News?  
+				  </label>
+				  
+				</div>
 			  
 			  <div class="form-group">
 			    <label for="exampleFormControlFile1">Upload image</label>
-			    <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+			    <input required="" type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
 			  </div>				
 	      </div>
 	      <div class="modal-footer">
@@ -36,3 +44,4 @@
 	    </div>
 	  </div>
 	</div>
+ 

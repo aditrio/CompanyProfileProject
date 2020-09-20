@@ -13,13 +13,14 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('berita', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->bigIncrements('id')->autoIncrement();
             $table->timestamps();
             $table->string('title',255);
             $table->text('content');
             $table->string('slug',255);
-            $table->string('view',255)->nullable();
+            $table->integer('view')->unsigned()->nullable();
+            $table->integer('headline')->unsigned();
             $table->string('imagePath',255)->nullable();
         });
     }
@@ -31,6 +32,6 @@ class CreateNewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('berita');
+        Schema::dropIfExists('news');
     }
 }

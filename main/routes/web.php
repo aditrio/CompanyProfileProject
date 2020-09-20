@@ -25,6 +25,9 @@ Route::post('/news/store', 'NewsController@store')->name('news.store');
 
 Route::put('/news/update/{id}', 'NewsController@update')->name('news.update');
 
+Route::put('/news/headline/{id}', 'NewsController@headline')->name('news.headline');
+
+
 Route::DELETE('/news/delete/{id}', 'NewsController@delete')->name('news.delete');
 
 

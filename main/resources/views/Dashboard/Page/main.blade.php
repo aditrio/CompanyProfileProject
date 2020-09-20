@@ -88,9 +88,10 @@
 								  		
 									    <tr>
 
-									      <th scope="row">◉</th>
+									      
 									  	  <td hidden="hidden">{{$da->id}}</td>
 									      <td>{{ Str::limit( $da->title , 70) }}</td>
+									      <td><i class="fa fa-eye"></i></td>
 									      <td>{{$da->view}}</td>
 									    </tr>
 								  	@endforeach
@@ -113,50 +114,25 @@
 								<h5 class="card-text">Edit Headline</h5>
 							</div>
 							<div class="card-body">
-								<table class="table table-striped table-responsive" style="height: 150px !important; width: 100% !important;">
+								<table class="table table-responsive" style="height: 150px !important; width: 100% !important;">
 								  <tbody >
-								    <tr>
-								      <th scope="row">◉</th>
-								      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-								      <td>100</td>
-								  
-								    </tr>
-								    <tr>
-								      <th scope="row">◉</th>
-								      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-								      <td>100</td>
-								  
-								    </tr>
-								    <tr>
-								      <th scope="row">◉</th>
-								      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-								      <td> 100</td>
-								      
-								    </tr>
-								     <tr>
-								      <th scope="row">◉</th>
-								      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-								      <td>100</td>
-								  
-								    </tr>
-								    <tr>
-								      <th scope="row">◉</th>
-								      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-								      <td>100</td>
-								  
-								    </tr>
-								    <tr>
-								      <th scope="row">◉</th>
-								      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-								      <td> 100</td>
-								      
-								    </tr>
+								  	@foreach ($head as $he)
+								  		
+									    <tr>
+
+									      
+									  	  <td hidden="hidden">{{$he->id}}</td>
+									      <td>{{ Str::limit( $he->title , 70) }}</td>
+									      <td><i class="fa fa-eye"></i></td>
+									      <td>{{$he->view}}</td>
+									    </tr>
+								  	@endforeach
 
 								  </tbody>
 								</table>
 							</div>
 							<div class="card-footer">
-								<button type="button" class="btn btn-success btn-action">Edit</button>
+								<button type="button" class="btn btn-success btn-action" data-toggle="modal" data-target="#headline-news">Edit</button>
 							</div>
 						</div>
 					</div>
@@ -393,6 +369,8 @@
 @include('Dashboard.modal.news.store')
 @include('Dashboard.modal.news.update')
 @include('Dashboard.modal.news.delete')
+@include('Dashboard.modal.news.headline')
+
 
 
 @endsection				

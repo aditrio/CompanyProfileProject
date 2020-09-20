@@ -59,7 +59,33 @@ $(document).ready(function() {
 	});
 
 
-	
+	$('#select-id').change(function(event) {
+		console.log(this.value);
+		var id = this.value;
+
+		if(id != ""){
+
+			$.ajax({
+				url: '/get/news/'+id,
+				type: 'GET',
+				
+				datatype:'json',
+				success: function(result) {
+					console.log(result.content);
+
+					$('#title-headline-news').val(result.title);
+					$('#content-headline-news').val(result.content);
+			
+					
+					
+				}
+			});
+
+			$('#form-headline-news').attr('action', '/news/headline/'+id);
+		}  
+
+
+	});
 	
 
 });

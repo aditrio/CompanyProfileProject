@@ -12,7 +12,9 @@ class News extends Model
     	'title',
     	'content',
     	'imagePath',
-    	'slug'
+    	'slug',
+    	'view',
+    	'headline'
 
 
     ];

@@ -39,6 +39,8 @@ class NewsController extends Controller
     public function store(Request $request)
     {
        
+        is_null($request['headline']) ? $headline = 0 : $headline = $request['headline'];
+
 
         News::create([
 
@@ -48,7 +50,8 @@ class NewsController extends Controller
             "content" => $request->content,
             "imagePath" => $this->uploadImage($request),
             "slug" => str_slug($request->title),
-
+            "view" => 0,
+            "headline" => $headline,
 
         ]);
 
@@ -89,13 +92,37 @@ class NewsController extends Controller
     public function update($id, Request $request)
     {
         $data = News::find($id);
+        $view = $data['view'];
+        is_null($data['headline']) ? $headline = 0 : $headline = $request['headline'];
+        is_null($request['image']) ? $image = $data : $image = $request;
 
+       
         $data->update([
 
             "title" => $request->title,
             "content" => $request->content,
-            "imagePath" => $this->uploadImage($request),
+            "imagePath" => $this->uploadImage($image),
             "slug" => str_slug($request->title),
+            "view" => $view,
+            "headline" => $headline,
+
+        ]);
+
+        $data->save();
+
+        return redirect()->back()->with('success', "Berhasil diubah");
+    }
+
+    public function headline($id, Request $request)
+    {
+        $data = News::find($id);
+        
+        is_null($data['headline']) ? $headline = 0 : $headline = $request['headline'];
+        
+        $data->update([
+
+
+            "headline" => $headline,
 
         ]);
 
@@ -132,7 +159,6 @@ class NewsController extends Controller
         $imageName = time().'.'.$data->getClientOriginalExtension();
 
         $data->move(public_path('images-all'), $imageName);
-
        
         return $imageName;
     }
