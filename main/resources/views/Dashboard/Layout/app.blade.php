@@ -23,7 +23,7 @@
 
 	<title>Dashboard</title>
 </head>
-<body style="background-color: #E9ECF4">
+<body id="body-app" style="background-color: #E9ECF4">
 
 	<div class="container-fluid">
 		

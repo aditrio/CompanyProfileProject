@@ -3,6 +3,10 @@ $(document).ready(function() {
 	
 	$('#btn-update-news').attr('disabled', true);
 	$('#btn-delete-news').attr('disabled', true);
+	$('#btn-app-tambah').attr('disabled', true);
+	$('#btn-app-update').attr('disabled', true);
+	$('#btn-app-delete').attr('disabled', true);
+
 
 	$("#table-news tr").click(function(){
 
@@ -10,7 +14,7 @@ $(document).ready(function() {
 
 			$(this).removeClass('selected');
 			$('#btn-update-news').attr('disabled', true);
-	   		$('#btn-delete-news').attr('disabled', true);
+   		$('#btn-delete-news').attr('disabled', true);
 		}else{
 
 		  	$(this).addClass('selected').siblings().removeClass('selected');    
@@ -86,6 +90,39 @@ $(document).ready(function() {
 
 
 	});
+
+	$('.option-card').click(function() {
+
+	 	$(".choice").removeClass("choice");
+		$(this).addClass("choice");
+
+		var name = $(this).find(':input').val();
+		console.log(name);
+		$('#btn-app-tambah').attr('disabled', false);
+		$('#btn-app-update').attr('disabled', false);
+		$('#btn-app-delete').attr('disabled', false);
+
+
+		$('#app-store-modal').find('.modal-header').text("Tambah " + name);
+		$('#app-store-modal').find('#category').val(name);
+		$('#app-store-modal').find('#form-product-store').attr('action', '/product/' + name + '/store');
+
+		
+
+
+
+
+
+
+
+	});
+
+	// appp
+
+
+
+
+	
 	
 
 });

@@ -147,10 +147,11 @@
 							<div class="card-body ">
 								<div class="row mb-3">
 									<div class="col-lg">
-										<div class="card">
+										<div class="card option-card">
 											<div class="card-header">
 												<h5 class="card-text">Android Applications</h5>
 											</div>
+											<input type="text" value="android" hidden="true">
 											<div class="card-body">
 												<table class="table table-striped table-responsive" style="height: 250px !important; width: 100% !important;">
 												  <tbody >
@@ -198,10 +199,11 @@
 										</div>
 									</div>
 									<div class="col-lg">
-										<div class="card">
+										<div class="card option-card">
 											<div class="card-header">
 												<h5 class="card-text">Desktop Applications</h5>
 											</div>
+											<input type="text" value="desktop" hidden="true">
 											<div class="card-body">
 												<table class="table table-striped table-responsive" style="height: 250px !important; width: 100% !important;">
 												  <tbody >
@@ -251,10 +253,11 @@
 								</div>
 								<div class="row mb-3">
 									<div class="col-lg">
-										<div class="card">
+										<div class="card  option-card">
 											<div class="card-header">
 												<h5 class="card-text">Web</h5>
 											</div>
+											<input type="text" value="web" hidden="true">
 											<div class="card-body">
 												<table class="table table-striped table-responsive" style="height: 250px !important; width: 100% !important;">
 												  <tbody >
@@ -302,10 +305,11 @@
 										</div>
 									</div>
 									<div class="col-lg">
-										<div class="card">
+										<div class="card option-card">
 											<div class="card-header">
-												<h5 class="card-text">Constraction</h5>
+												<h5 class="card-text">Construction</h5>
 											</div>
+											<input type="text" value="construction" hidden="true">
 											<div class="card-body">
 												<table class="table table-striped table-responsive" style="height: 250px !important; width: 100% !important;">
 												  <tbody >
@@ -356,9 +360,9 @@
 								
 							</div>
 							<div class="card-footer mt-3">
-								<button type="button" class="btn btn-success btn-action">Tambah</button>
-								<button type="button" class="btn btn-success btn-action">Update</button>
-								<button type="button" class="btn btn-success btn-action">Hapus</button>
+								<button type="button" data-toggle="modal" data-target="#app-store-modal" class="btn btn-success btn-action" id="btn-app-tambah">Tambah</button>
+								<button type="button" class="btn btn-success btn-action"id="btn-app-update">Update</button>
+								<button type="button" class="btn btn-success btn-action"id="btn-app-delete">Hapus</button>
 							</div>
 						</div>
 						
@@ -370,6 +374,8 @@
 @include('Dashboard.modal.news.update')
 @include('Dashboard.modal.news.delete')
 @include('Dashboard.modal.news.headline')
+@include('Dashboard.modal.app.store')
+
 
 
 

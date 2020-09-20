@@ -85,3 +85,10 @@ table {
 	background-color: grey;
 
 }
+
+.option-card:hover,
+.option-card.choice {
+    border: 2px #3AC4AD solid;
+    text-decoration: none;
+}
+
