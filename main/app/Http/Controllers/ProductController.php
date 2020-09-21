@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -105,5 +107,12 @@ class ProductController extends Controller
         $data->move(public_path('images-all'), $imageName);
        
         return $imageName;
+    }
+
+    public function getByCat($cat){
+
+        $data = DB::table('products')->where('category',$cat)->get();
+        
+        return response()->json($data);
     }
 }

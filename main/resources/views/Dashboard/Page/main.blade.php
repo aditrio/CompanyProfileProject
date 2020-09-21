@@ -155,42 +155,17 @@
 											<div class="card-body">
 												<table class="table table-striped table-responsive" style="height: 250px !important; width: 100% !important;">
 												  <tbody >
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td> 100</td>
-												      
-												    </tr>
-												     <tr>
-												      <th scope="row">◉</th>
-												      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td> 100</td>
-												      
-												    </tr>
+												  	@foreach ($products->where('category','android') as $android)
+												  		<tr>
+													      <th scope="row">◉</th>
+													      <td>{{$android->name}}</td>
+													      <td>{{Str::limit($android->desc,40)}}</td>
+													      <td><i class="fa fa-heart" ></i></td>												  
+													      <td>{{$android->like}}</td>
+												    	</tr>
+												  	@endforeach
+												    
+												    
 
 												  </tbody>
 												</table>
@@ -207,42 +182,15 @@
 											<div class="card-body">
 												<table class="table table-striped table-responsive" style="height: 250px !important; width: 100% !important;">
 												  <tbody >
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td> 100</td>
-												      
-												    </tr>
-												     <tr>
-												      <th scope="row">◉</th>
-												      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td> 100</td>
-												      
-												    </tr>
+												    @foreach ($products->where('category','desktop') as $desktop)
+												  		<tr>
+													      <th scope="row">◉</th>
+													      <td>{{$desktop->name}}</td>
+													      <td>{{Str::limit($desktop->desc,40)}}</td>
+													      <td><i class="fa fa-heart" ></i></td>												  
+													      <td>{{$desktop->like}}</td>
+												    	</tr>
+												  	@endforeach
 
 												  </tbody>
 												</table>
@@ -261,42 +209,15 @@
 											<div class="card-body">
 												<table class="table table-striped table-responsive" style="height: 250px !important; width: 100% !important;">
 												  <tbody >
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td> 100</td>
-												      
-												    </tr>
-												     <tr>
-												      <th scope="row">◉</th>
-												      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td> 100</td>
-												      
-												    </tr>
+												    @foreach ($products->where('category','web') as $web)
+												  		<tr>
+													      <th scope="row">◉</th>
+													      <td>{{$web->name}}</td>
+													      <td>{{Str::limit($web->desc,40)}}</td>
+													      <td><i class="fa fa-heart" ></i></td>												  
+													      <td>{{$web->like}}</td>
+												    	</tr>
+												  	@endforeach
 
 												  </tbody>
 												</table>
@@ -313,42 +234,15 @@
 											<div class="card-body">
 												<table class="table table-striped table-responsive" style="height: 250px !important; width: 100% !important;">
 												  <tbody >
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td> 100</td>
-												      
-												    </tr>
-												     <tr>
-												      <th scope="row">◉</th>
-												      <td>Mark sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Jacob sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td>100</td>
-												  
-												    </tr>
-												    <tr>
-												      <th scope="row">◉</th>
-												      <td>Larry sadkjak jdkasjdlkasjdkasdjklasdjkasd</td>
-												      <td> 100</td>
-												      
-												    </tr>
+												    @foreach ($products->where('category','construction') as $construction)
+												  		<tr>
+													      <th scope="row">◉</th>
+													      <td>{{$construction->name}}</td>
+													      <td>{{Str::limit($construction->desc,40)}}</td>
+													      <td><i class="fa fa-heart" ></i></td>												  
+													      <td>{{$construction->like}}</td>
+												    	</tr>
+												  	@endforeach
 
 												  </tbody>
 												</table>
@@ -361,7 +255,7 @@
 							</div>
 							<div class="card-footer mt-3">
 								<button type="button" data-toggle="modal" data-target="#app-store-modal" class="btn btn-success btn-action" id="btn-app-tambah">Tambah</button>
-								<button type="button" class="btn btn-success btn-action"id="btn-app-update">Update</button>
+								<button type="button" class="btn btn-success btn-action"id="btn-app-update"  data-toggle="modal" data-target="#update-product-modal">Update</button>
 								<button type="button" class="btn btn-success btn-action"id="btn-app-delete">Hapus</button>
 							</div>
 						</div>
@@ -375,6 +269,8 @@
 @include('Dashboard.modal.news.delete')
 @include('Dashboard.modal.news.headline')
 @include('Dashboard.modal.app.store')
+@include('Dashboard.modal.app.update')
+
 
 
 

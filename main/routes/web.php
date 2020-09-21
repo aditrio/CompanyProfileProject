@@ -33,3 +33,4 @@ Route::post('product/{cat}/store', 'ProductController@store')->name('product.sto
 
 
 Route::get('/get/news/{id}', 'NewsController@getById');
+Route::get('/get/products/{cat}', 'ProductController@getByCat');

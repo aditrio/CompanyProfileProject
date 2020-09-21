@@ -7,6 +7,7 @@ $(document).ready(function() {
 	$('#btn-app-update').attr('disabled', true);
 	$('#btn-app-delete').attr('disabled', true);
 
+	var product_data = {};
 
 	$("#table-news tr").click(function(){
 
@@ -90,8 +91,10 @@ $(document).ready(function() {
 
 
 	});
-
+	
 	$('.option-card').click(function() {
+    
+    $('.temp').remove();
 
 	 	$(".choice").removeClass("choice");
 		$(this).addClass("choice");
@@ -110,19 +113,51 @@ $(document).ready(function() {
 		
 
 
+		$.ajax({
+			url: '/get/products/'+name,
+			type: 'GET',
+			
+			datatype:'json',
+			success: function(result) {
+				console.log(result);
+				
+				for (var i = 0; i < result.length; i++) {
+					
+					var o = new Option(result[i].name, result[i].id);
+					$(o).html(result[i].name);
+					product_data[result[i].id] = result[i].desc;
+					$(o).addClass('temp');
+					$("#select-id-product").append(o);
 
+				}
 
+				console.log(product_data);
+			}
+
+		});
+		
+		$('#update-product-modal').find('.modal-header').text("Update " + name);
+		$('#update-product-modal').find('#category').val(name);
+		
 
 
 
 	});
 
-	// appp
+	$('#select-id-product').change(function(event) {
+
+			var id = $(this).val();
+			$('#update-product-modal').find('#form-product-update').attr('action', '/product/update/' + id);
+			var text = $('#select-id-product option:selected').text();
+			$('#name-prod').val(text);
+			$('#desc-prod').val(product_data[id]);
 
 
+	});
 
-
-	
-	
+	$('#btn-app-update').click(function(event) {
+		  $('#name-prod').val('');
+			$('#desc-prod').val('');
+	});
 
 });
