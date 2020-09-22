@@ -256,7 +256,7 @@
 							<div class="card-footer mt-3">
 								<button type="button" data-toggle="modal" data-target="#app-store-modal" class="btn btn-success btn-action" id="btn-app-tambah">Tambah</button>
 								<button type="button" class="btn btn-success btn-action"id="btn-app-update"  data-toggle="modal" data-target="#update-product-modal">Update</button>
-								<button type="button" class="btn btn-success btn-action"id="btn-app-delete">Hapus</button>
+								<button type="button" class="btn btn-success btn-action"id="btn-app-delete" data-toggle="modal" data-target="#modal-delete-product">Hapus</button>
 							</div>
 						</div>
 						
@@ -270,6 +270,8 @@
 @include('Dashboard.modal.news.headline')
 @include('Dashboard.modal.app.store')
 @include('Dashboard.modal.app.update')
+@include('Dashboard.modal.app.delete')
+
 
 
 

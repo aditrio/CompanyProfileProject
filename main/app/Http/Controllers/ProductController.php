@@ -82,9 +82,20 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Product $product, $id)
     {
-        //
+        $data = Product::find($id);        
+
+        is_null($request->image) ? $image = $data["imagePath"] : $image = $this->uploadImage($request);
+        $data->update([
+
+            "name" => $request->name,
+            "desc" => $request->desc,
+            "imagePath" => $image
+
+        ]);
+
+        return redirect()->back()->with('success', 'Berhsail diubah !!');
     }
 
     /**
@@ -93,9 +104,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Product $product, $id)
     {
-        //
+        $data = Product::find($id);
+
+        $data->delete();
+
+        return redirect()->back()->with('success', 'Berhsail dihapus !!');
     }
 
     public static function uploadImage($req){

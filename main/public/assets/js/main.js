@@ -128,6 +128,7 @@ $(document).ready(function() {
 					product_data[result[i].id] = result[i].desc;
 					$(o).addClass('temp');
 					$("#select-id-product").append(o);
+					$("#delete-id-product").append(o);
 
 				}
 
@@ -151,6 +152,16 @@ $(document).ready(function() {
 			var text = $('#select-id-product option:selected').text();
 			$('#name-prod').val(text);
 			$('#desc-prod').val(product_data[id]);
+
+
+	});
+
+	$('#delete-id-product').change(function(event) {
+
+			var id = $(this).val();
+			$('#modal-delete-product').find('#form-delete-product').attr('action', '/product/delete/' + id);
+
+
 
 
 	});

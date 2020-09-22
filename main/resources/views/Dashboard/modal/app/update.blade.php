@@ -42,6 +42,11 @@
 			    <input  required="" type="text" class="form-control" id="desc-prod" name="desc" placeholder="Content Here....">
 			  </div>		
 
+			  <div class="form-group">
+			    <label for="exampleFormControlFile1">Upload image <small>keep empty to not update the image</small></label>
+			    <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+			  </div>
+
 			  		
 	      </div>
 	      <div class="modal-footer">

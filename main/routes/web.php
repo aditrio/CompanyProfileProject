@@ -31,6 +31,11 @@ Route::DELETE('/news/delete/{id}', 'NewsController@delete')->name('news.delete')
 
 Route::post('product/{cat}/store', 'ProductController@store')->name('product.store');
 
+Route::put('/product/update/{id}', 'ProductController@update')->name('product.update');
+
+Route::DELETE('/product/delete/{id}', 'ProductController@destroy')->name('product.delete');
+
+
 
 Route::get('/get/news/{id}', 'NewsController@getById');
 Route::get('/get/products/{cat}', 'ProductController@getByCat');
