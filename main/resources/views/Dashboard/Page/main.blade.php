@@ -101,9 +101,9 @@
 								</table>
 							</div>
 							<div class="card-footer">
-								<button type="button" class="btn btn-success btn-action" data-toggle="modal" data-target="#exampleModalCenter">Tambah</button>
+								<button type="button" id="btn-store-news" class="btn btn-success btn-action" data-toggle="modal" data-target="#exampleModalCenter">Tambah</button>
 								
-								<button type="button" id="btn-update-news" disabled class="btn btn-success btn-action"data-toggle="modal" data-target="#update-news">Update</button>
+								<button type="button" id="btn-update-news" disabled class="btn btn-success btn-action"data-toggle="modal" data-target="#exampleModalCenter">Update</button>
 								<button type="button" id="btn-delete-news" disabled data-toggle="modal" data-target="#modal-delete-news" class="btn btn-success btn-action">Hapus</button>
 							</div>
 						</div>

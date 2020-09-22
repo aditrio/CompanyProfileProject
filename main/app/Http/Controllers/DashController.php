@@ -9,10 +9,20 @@ use Illuminate\Http\Request;
 
 class DashController extends Controller
 {
+
+
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index() {
 
     	$data = News::latest()->get();
     	$head = News::where('headline',1)->get();
+
+        
 
     	$products = Product::latest()->get();
 

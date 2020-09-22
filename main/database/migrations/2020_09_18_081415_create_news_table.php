@@ -15,9 +15,12 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->bigIncrements('id')->autoIncrement();
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
             $table->string('title',255);
             $table->text('content');
+            $table->string('tags',255);
             $table->string('slug',255);
             $table->integer('view')->unsigned()->nullable();
             $table->integer('headline')->unsigned();

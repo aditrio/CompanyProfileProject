@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\News;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
@@ -47,6 +49,8 @@ class NewsController extends Controller
 
 
             "title" => $request->title,
+            "user_id" => Auth::id(),
+            "tags" => $request->tags,
             "content" => $request->content,
             "imagePath" => $this->uploadImage($request),
             "slug" => str_slug($request->title),
@@ -100,6 +104,8 @@ class NewsController extends Controller
         $data->update([
 
             "title" => $request->title,
+            "user_id" => Auth::id(),
+            "tags" => $request->tags,
             "content" => $request->content,
             "imagePath" => $this->uploadImage($image),
             "slug" => str_slug($request->title),

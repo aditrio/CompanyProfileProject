@@ -24,6 +24,17 @@
 			    <input required="" type="text" class="form-control title-update" id="title-update-news" name="title" placeholder="Title Here ...." value="">
 			    
 			  </div>
+
+			   <div class="form-group" >
+			    <label for="exampleInputEmail1">News Tags</label>
+			    <input type="text" class="form-contro tags-input" id="tags-update" placeholder="Press Space to add ....">
+			    <input type="text" hidden="" name="tags" id="tags-field-update" value="">
+			    <div class="row" id="tags-div-update">
+			    	
+			    </div>
+			    
+			  </div>
+
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">News Content</label>
 			    <input required="" type="text" class="form-control" id="content-update-news" name="content" placeholder="Content Here....">

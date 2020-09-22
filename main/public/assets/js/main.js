@@ -1,4 +1,5 @@
-
+var tags = {};
+var id = 0;
 $(document).ready(function() {
 	
 	$('#btn-update-news').attr('disabled', true);
@@ -6,7 +7,7 @@ $(document).ready(function() {
 	$('#btn-app-tambah').attr('disabled', true);
 	$('#btn-app-update').attr('disabled', true);
 	$('#btn-app-delete').attr('disabled', true);
-
+	
 	var product_data = {};
 
 	$("#table-news tr").click(function(){
@@ -29,28 +30,47 @@ $(document).ready(function() {
 
 	   	  
 	});
+
+	$('#btn-store-news').on('click',function(event) {
+
+		$('#title-modal-news').text('Tambah Berita');
+	  $('#method_field').val('POST');
+
+	});
+
 	$('#btn-update-news').on('click', function(e){
-	   var id =  $("#table-news tr.selected td:first").html();
-	
+	   var idf =  $("#table-news tr.selected td:first").html();
+		
+		$('#title-modal-news').text('Edit Berita');
 	 
-	   console.log(id);
+	   console.log(idf);
 	   $.ajax({
-			url: '/get/news/'+id,
+			url: '/get/news/'+idf,
 			type: 'GET',
 			
 			datatype:'json',
 			success: function(result) {
 				console.log(result.content);
 
-				$('#title-update-news').val(result.title);
-				$('#content-update-news').val(result.content);
-		
+				$('#title').val(result.title);
+				$('#content').val(result.content);
+				var data = result.tags;
+				var arr = data.split(',');
+				console.log(arr);
+				for(var item in arr){
+					addData(arr[item],id);
+					id++;
+
+				}
 				
 				
 			}
 		});
 
-	   $('#form-update-news').attr('action', '/news/update/' + id);
+	   $('#form-store-news').attr('action', '/news/update/' + idf);
+	   $('#method_field').val('PUT');
+
+
 	   
 
 	 
@@ -171,4 +191,51 @@ $(document).ready(function() {
 			$('#desc-prod').val('');
 	});
 
+
+	//////////// store tag /////////
+	
+	$('#tags').keypress(function(event) {
+		if(event.key == ' '){
+			
+			addData($('#tags').val(),id);
+			
+			$('#tags').val("");
+			console.log(tags);
+			id++;
+		}
+	});
+
+
+
 });
+	
+function addData(data,ids){
+		var test = '<div class="col-sm mt-2">'+
+							'<div class="alert alert-info alert-dismissible fade show" role="alert">'+
+						  data+
+						  '<button type="button" onClick="deleteData('+ids+')" class="close" data-dismiss="alert" aria-label="Close">'+
+						    '<span aria-hidden="true">&times;</span>'+
+						 '</button>'+
+						'</div> </div>'
+		$('#tags-div').append(test);
+		tags[ids] = 	data;
+		updateData(tags);
+}
+
+function deleteData(ids){
+	delete tags[ids];
+	console.log(tags);
+	updateData(tags);
+}
+
+function updateData(data){
+	var tagsData = [];
+	for(var item in data){
+		tagsData.push(data[item]);
+	}
+	console.log(tagsData);
+	$('#tags-field').val(tagsData.join(","));
+	
+	
+
+}
