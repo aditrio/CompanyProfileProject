@@ -45,7 +45,7 @@
 				<div class="card bg-light sidebar sticky-top">
 					<div class="card-body">
 						<ul class="dash-nav">
-							<li class="dash-nav-item active"><a class="text-success" href=""><i class="fa fa-columns"></i> Dashboard</a></li>
+							<li class="dash-nav-item active-dash"><a class="text-success" href=""><i class="fa fa-columns"></i> Dashboard</a></li>
 							<li class="dash-nav-item "><a class="text-success" href=""><i class="fa fa-users"></i>  Admin</a></li>
 						</ul>
 					</div>
