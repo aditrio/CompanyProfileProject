@@ -133,3 +133,36 @@ table {
 	-moz-box-shadow: inset 0px 0px 24px 1px rgba(0,0,0,0.75);
 	box-shadow: inset 0px 0px 24px 1px rgba(0,0,0,0.75);
 }
+
+.circle {
+	width: 20px;
+	height: 20px;
+	border : 1px solid;
+	border-color: grey;
+	border-radius: 100px;
+	cursor: pointer;
+}
+
+.c-active {
+	width: 10px;
+	height: 10px;
+	margin-top: 4px;
+	background-color: #0375FF;
+	border-radius: 100px;
+}
+
+.c-none {
+	width: 10px;
+	height: 10px;
+	margin-top: 4px;
+	background-color: grey;
+	border-radius: 100px;
+}
+
+.line-circle {
+	width: 130px;
+	height: 1px;
+	background-color: grey;
+	margin-top: 10px;
+}
+

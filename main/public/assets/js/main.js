@@ -234,8 +234,9 @@ function updateData(data){
 		tagsData.push(data[item]);
 	}
 	console.log(tagsData);
-	$('#tags-field').val(tagsData.join(","));
-	
-	
+	$('#tags-field').val(tagsData.join(","));	
 
 }
+
+
+	
