@@ -1,12 +1,22 @@
 @extends('Pages/layouts/app')
 
-@section('content')
-	<div class="jumbotron jumbotron-fluid" >
+@section('title',"Home")
+
+
+@section('jumbotron')
+
+	<div class="jumbotron jumbotron-fluid" style="background-image: url('https://64.media.tumblr.com/bc704b77de1adb08a750eba802d18e1d/tumblr_px4vmyYRPi1qzdw6bo1_1280.jpg');" >
 		<div class="container text-center text-light " style="margin-top: 200px !important;">	  	
 		    <h1 class="display-4" style="font-size: 32px">MARI KEMBANGKAN BERSAMA</h1>
 		    <button class="btn btn-light" style="border-radius: 10px;">Temukan Sekarang</button>
 		  </div>
 	</div>
+
+@endsection
+
+
+@section('content')
+	
 
 	<section id="header">
 		<div class="row">
@@ -179,38 +189,5 @@
 		
 	</section>
 
-	<section id=footer>
-		<div class="container">
-			
-			<center class="text-white">
-				<br>
-				<h4 class="mt-3"><b>Contact Us</b></h4>			
-				<br>
-			</center>
-			<div class="row">
-				<div class="col-lg-2"></div>
-				<div class="col-lg text-light">
-					Nama <br>
-					<input type="text" style="width: 300px; background-color: #1C1F1F"	class="text-light" id="nama">
-					<br>Email <br>
-					<input type="text"style="width: 300px; background-color: #1C1F1F" class="text-light" id="nama">
-					<br>Pesan <br>
-					<textarea name="pesan" style="width: 300px; background-color: #1C1F1F" id="" class="text-light" cols="21" rows="5"></textarea><br>
-
-					<button type="button" style="width: 250px" class="btn btn-danger">Submit</button>
-					<br><br>
-				</div>
-				<div class="col-lg-5 text-light" align="right">
-					<img src="./assets/image/cpi.png"  height="100" alt="">
-					<div class="row justify-content-end p-4" >
-						<a href=""><img src="https://housing.virginia.edu/sites/housing.virginia.edu/files/instagram-icon-good.png" height="50" alt=""></a>
-						<a href=""><img src="https://housing.virginia.edu/sites/housing.virginia.edu/files/instagram-icon-good.png" height="50" alt=""></a>
-						<a href=""><img src="https://housing.virginia.edu/sites/housing.virginia.edu/files/instagram-icon-good.png" height="50" alt=""></a>
-						<br>
-						<p>@2020 PT GIGA Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	
 @endsection

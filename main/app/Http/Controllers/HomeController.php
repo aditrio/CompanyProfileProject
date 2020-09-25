@@ -22,4 +22,9 @@ class HomeController extends Controller
     {
         return view('Pages.home');
     }
+
+    public function tentang()
+    {
+        return view('Pages.tentang');
+    }
 }
