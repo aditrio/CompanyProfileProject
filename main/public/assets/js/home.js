@@ -25,7 +25,37 @@ $(document).ready(function() {
 		}
 	});
 
+	// data to modal //
 
+	$('.click-news').click(function(event) {
+		$('#badges').empty();
+		var id = $(this).data("id");
+		var path = "./images-all/"
+		var date = $(this).data('date');
+		$.ajax({
+				url: '/get/news/'+id,
+				type: 'GET',
+				
+				datatype:'json',
+				success: function(result) {
+					
+					var arr = result.tags.split(",");
+
+					for (var i = arr.length - 1; i >= 0; i--) {
+						$('#badges').append('<p class="badge badge-pill m-1 ">'+arr[i]+'</p>');
+					}
+
+					$('#img-modal').attr('src', path + result.imagePath);
+					$('#text-modal').text(result.title);
+					
+					$('#date-modal').text(date);
+					$('#content-modal').text(result.content);
+					
+					
+				}
+			});
+		$('#view-news').modal('show');
+	});
 
 });
 
