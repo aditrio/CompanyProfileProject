@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\News;
+use App\Users;
 
 class HomeController extends Controller
 {
@@ -26,5 +29,12 @@ class HomeController extends Controller
     public function tentang()
     {
         return view('Pages.tentang');
+    }
+
+    public function berita()
+    {
+        $news = News::latest()->get();
+
+        return view('Pages.berita',['news' => $news]);
     }
 }

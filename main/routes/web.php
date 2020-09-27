@@ -40,3 +40,4 @@ Route::get('/get/products/{cat}', 'ProductController@getByCat');
 
 
 Route::get('/tentang', 'HomeController@tentang');
+Route::get('/berita', 'HomeController@berita');
