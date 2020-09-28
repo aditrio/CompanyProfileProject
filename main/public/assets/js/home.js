@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+	 
+
+
+
 	// horizontal line circle //
 	var slideId;
 	$('.circle').click(function(event) {
@@ -57,9 +62,50 @@ $(document).ready(function() {
 		$('#view-news').modal('show');
 	});
 
+
+
+	$('.select-gallery').click(function(event) {
+		$('#liked').removeClass('yes');
+		var id = $(this).data('id');
+		var path = "./images-all/";
+		$('#form-liked').attr('action', '/like/'+id+'/product/');
+		$.ajax({
+				url: '/get/'+id+'/product',
+				type: 'GET',
+				datatype: 'json',
+				
+				success: function(result) {
+					
+					$('#img-gallery').attr('src', path + result[0].imagePath);
+					$('#category-gallery').text(result[0].category);
+					$('#desc-gallery').text(result[0].desc);
+					$('#name-gallery').text(result[0].name);
+					$('#like-gallery').text(result[0].like);
+					$('#liked').data('id', result[0].id);
+	
+					
+				},
+				error : function(e) {
+					console.log(e.responseText);
+				}
+			});
+		$('#view-gallery').modal('show');
+	});
+
+	
+	$('#liked').click(function(event) {
+		var id = $(this).data('id');
+		
+		
+		$(this).addClass('yes');
+
+	});
+
+
 });
 
 function setSlide(id) {
 	$('.slide-page').attr('hidden', true);
 	$(id).attr('hidden', false);
 }
+

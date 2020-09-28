@@ -37,7 +37,14 @@ Route::DELETE('/product/delete/{id}', 'ProductController@destroy')->name('produc
 
 Route::get('/get/news/{id}', 'NewsController@getById');
 Route::get('/get/products/{cat}', 'ProductController@getByCat');
+Route::get('/get/{id}/product', 'ProductController@getById');
+
+Route::put('/like/{id}/product', 'ProductController@likedById');
+
+
 
 
 Route::get('/tentang', 'HomeController@tentang');
 Route::get('/berita', 'HomeController@berita');
+Route::get('/gallery', 'HomeController@gallery');
+

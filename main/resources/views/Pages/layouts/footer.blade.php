@@ -1,4 +1,4 @@
-<section id=footer>
+<section id=footer style="margin-top: -25px;">
 		<div class="container">
 			
 			<center class="text-white">

@@ -130,4 +130,25 @@ class ProductController extends Controller
         
         return response()->json($data);
     }
+
+    public function getById($id){
+
+        $prod = DB::table('products')->where('id',$id)->get();
+
+        $json = Product::find($id)->get();
+        
+        return response()->json($prod);
+    }
+
+    public function likedById($id){
+        $data = Product::find($id);
+        $dataLike = (int)$data['like'] + 1;
+        $data->update([
+
+            'like' => (string)$dataLike
+
+        ]);
+
+        return redirect()->back();
+    }
 }

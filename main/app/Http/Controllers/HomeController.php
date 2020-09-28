@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use App\Product;
 use App\Users;
 
 class HomeController extends Controller
@@ -36,5 +37,12 @@ class HomeController extends Controller
         $news = News::latest()->get();
 
         return view('Pages.berita',['news' => $news]);
+    }
+
+    public function gallery()
+    {
+        $prod = Product::latest()->get();
+
+        return view('Pages.gallery',['prod' => $prod]);
     }
 }

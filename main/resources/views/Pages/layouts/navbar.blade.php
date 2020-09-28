@@ -7,10 +7,10 @@
         <div class="container">
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="/" class="nav-item nav-link active">Beranda</a>
+                <a href="/" class="nav-item nav-link ">Beranda</a>
                 <a href="/tentang" class="nav-item nav-link">Tentang</a>
-                <a href="#" class="nav-item nav-link">Berita</a>
-                <a href="#" class="nav-item nav-link">Galery</a>
+                <a href="/berita" class="nav-item nav-link">Berita</a>
+                <a href="/gallery" class="nav-item nav-link">Galery</a>
             </div>
           <a href="#" class="navbar-brand mr-auto ml-auto">
             <img src="./assets/image/consulting.png" height="28" alt="CoolBrand">

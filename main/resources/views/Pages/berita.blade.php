@@ -1,14 +1,26 @@
 @extends('Pages.layouts.app')
+@section('style')
+<style>
+	.navbar {
+		background: #3d3e3e !important;
+	}
 
+	.navbar.scrolled {
+		background-color: rgba(0,0,0,0.5) !important;
+	}	
+</style>
+
+@endsection
 @section('title', "Berita")
 
 @section('content')
 	 
-	<section id="cardSection" >
-		<div class="container text-light">			
-			<div class="row justify-content-center">
-				<div class="col-lg pt-4 pb-4" style="margin-left: -300px;">
-						<div class="img-holder">
+	<section id="cardSection">
+		<div class="container text-light ">		
+		<br>	
+			<div class="row justify-content-center ">
+				<div class="col-lg pt-4 pb-4 " style="margin-left: -300px;">
+						<div class="img-holder click-news"data-id="{{$news[0]->id}}">
 	            <img class="img-container img-preview" src="./images-all/<?= $news[0]->imagePath ?>">
 	            <p><b>{{ Str::limit($news[0]->title),100}}</b></p>
 	            <span>{{$news[0]->created_at->format('j F, Y , h:i A')}}</span>
@@ -16,7 +28,7 @@
 				</div>				
 					<div class="col-lg-3 pt-4 pb-4 " style="margin-left: -300px;">				
 							@for ($i = 1; $i < count($news); $i++)
-								<div class="img-holder-sm">
+								<div class="img-holder-sm click-news" data-id="{{$news[$i]->id}}">
 			            <img class="img-container-sm img-preview-sm" src="./images-all/<?= $news[$i]->imagePath ?>">
 			            <p><span>{{ Str::limit($news[$i]->title),100}}</span></p>
 		     				</div>
@@ -57,7 +69,7 @@
 				@endforeach
 		</div>
 
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+			{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> --}}
 	</section>
 
 
@@ -86,5 +98,30 @@
     </div>
   </div>
 </div>
+
+@section('script')
+	<script>
+		$(document).ready(function() {
+			
+			if($('.navbar').length > 0){
+			    $(window).on("scroll load resize", function(){
+			        checkScroll();
+			    });
+			}
+		});
+		function checkScroll(){
+			var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+			if($(window).scrollTop() > startY){
+			    $('.navbar').addClass("scrolled");
+			}else{
+			    $('.navbar').removeClass("scrolled");
+			}
+
+		}
+	</script>
+
+@endsection
+
 
 @endsection
