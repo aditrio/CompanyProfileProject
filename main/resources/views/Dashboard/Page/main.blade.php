@@ -26,11 +26,13 @@
 						<div class="card text-white mb-3 andro-card border" style="">
 						  
 						  <div class="card-body">
-						    <h5 class="card-title text-right">Warning</h5>
-						    <p class="card-text">Some quick example</p>
+
+						    <h5 class="card-title text-right"><i class="fa fa-heart"></i>
+						    	{{$mostProd->where('category','android')->first()['like']}}</h5>
+						    <p class="card-text">{{$mostProd->where('category','android')->first()['name']}}</p>
 						  </div>
 						  <div class="card-footer">
-						  	27318
+						  	Most Liked Android Development
 						  </div>
 						</div>
 					</div>	
@@ -38,11 +40,12 @@
 						<div class="card text-white mb-3 border web-card">
 						  
 						  <div class="card-body">
-						    <h5 class="card-title text-right">Warning</h5>
-						    <p class="card-text">Some quick example</p>
+						    <h5 class="card-title text-right"><i class="fa fa-heart"></i>
+						    	{{$mostProd->where('category','web')->first()['like']}}</h5>
+						    <p class="card-text">{{$mostProd->where('category','web')->first()['name']}}</p>
 						  </div>
 						  <div class="card-footer">
-						  	27318
+						  	Most Liked Android Development
 						  </div>
 						</div>
 					</div>	
@@ -50,11 +53,12 @@
 						<div class="card text-white desktop-card mb-3 border ">
 						  
 						  <div class="card-body">
-						    <h5 class="card-title text-right">Warning</h5>
-						    <p class="card-text">Some quick example</p>
+						    <h5 class="card-title text-right"><i class="fa fa-heart"></i>
+						    	{{$mostProd->where('category','desktop')->first()['like']}}</h5>
+						    <p class="card-text">{{$mostProd->where('category','desktop')->first()['name']}}</p>
 						  </div>
 						  <div class="card-footer">
-						  	27318
+						  	Most Liked Desktop App Development
 						  </div>
 						</div>
 					</div>	
@@ -62,11 +66,12 @@
 						<div class="card text-white const-card mb-3 border">
 						  
 						  <div class="card-body">
-						    <h5 class="card-title text-right">Warning</h5>
-						    <p class="card-text">Some quick example</p>
+						    <h5 class="card-title text-right"><i class="fa fa-heart"></i>
+						    	{{$mostProd->where('category','construction')->first()['like']}}</h5>
+						    <p class="card-text">{{$mostProd->where('category','construction')->first()['name']}}</p>
 						  </div>
 						  <div class="card-footer">
-						  	27318
+						  	Most Liked Constructions Development
 						  </div>
 						</div>
 					</div>	

@@ -59,6 +59,23 @@ $(document).ready(function() {
 					
 				}
 			});
+		$.ajax({
+	        url: '/view/'+id+'/news',
+	        type:"POST",
+	        beforeSend: function (xhr) {
+	            var token = $('meta[name="csrf-token"]').attr('content');
+
+	            if (token) {
+	                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+	            }
+	        },
+	        data: { _method : 'PUT'},
+	        success:function(data){
+	            console.log(data.view);
+	        },error:function(){ 
+	            alert("error!!!!");
+	        }
+	    }); //end of ajax
 		$('#view-news').modal('show');
 	});
 
@@ -98,6 +115,17 @@ $(document).ready(function() {
 		
 		
 		$(this).addClass('yes');
+
+	});
+
+
+	// select by 
+	$('#inputState').change(function(event) {
+
+		var by = $(this).val();
+
+		$('#form-select').attr('action', '/gallery/'+by);
+		$('#form-select').submit();
 
 	});
 

@@ -13,10 +13,10 @@
                 <a href="/gallery" class="nav-item nav-link">Galery</a>
             </div>
           <a href="#" class="navbar-brand mr-auto ml-auto">
-            <img src="./assets/image/consulting.png" height="28" alt="CoolBrand">
+            <img src="../assets/image/LOGO-02.png" height="50" alt="CoolBrand">
         </a>
             <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link">Login</a>
+                <a href="/login" class="nav-item nav-link">Login</a>
             </div>
         </div>
         </div>

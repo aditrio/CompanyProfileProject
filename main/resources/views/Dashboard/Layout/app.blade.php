@@ -55,7 +55,26 @@
 				<div class="row">
 					<div class="card card-header header bg-light col-lg ">
 						
-							<b><p class="ml-5">"Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p></b>
+						<div class="row">
+							<div class="col-lg-8" >
+								<b><p class="ml-5">Seseorang meminati proyek <span></span><i class="fa fa-bell pull-right p-1"></i></p></b>
+								
+							</div>
+							<div class="col-lg-4 ">
+								<div class="dropdown pull-right ">
+									  <button class="btn p-1 btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    {{Auth::user()->name }}
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <a class="dropdown-item" href="{{ Auth::logout()}}">Logout</a>
+								
+									  </div>
+									</div>
+								
+								
+							</div>
+						</div>
+
 						
 					</div>
 					

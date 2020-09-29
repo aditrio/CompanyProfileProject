@@ -176,6 +176,20 @@ class NewsController extends Controller
         Return response()->json($data);
     }
 
+    public function addView($id){
+
+        $data = News::find($id);
+
+        $view = (int)$data['view'] + 1;
+        $data->update([
+
+            "view" => (string)$view,
+
+        ]);
+
+        return response()->json($data);
+
+    }
 
 }
 

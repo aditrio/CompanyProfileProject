@@ -45,4 +45,19 @@ class HomeController extends Controller
 
         return view('Pages.gallery',['prod' => $prod]);
     }
+
+    public function getBy($by)
+    {
+        $data = null;
+
+        if($by == 'popular'){
+
+            $data = Product::orderBy('like','desc')->get();            
+
+        }else {
+            $data = Product::latest()->get();
+        }
+
+        return view('Pages.gallery',['prod' => $data]);
+    }
 }

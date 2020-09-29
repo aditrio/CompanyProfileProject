@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-
+	
 	<section id="cardSection" style="margin-top: -50px;">
 
 		<div class="container">
@@ -24,8 +24,12 @@
 						<select id="inputState" class="form-control select-prod">
 					        <option selected disabled="">Choose...</option>
 					        <option value="popular">Popular</option>
-					        <option value="news">News</option>
-				        </select>
+					        <option value="news">Newest</option>
+		        </select>
+		        <form id="form-select" action="" method="get">
+		        	@csrf
+		        	
+		        </form>
 					</li>
 				  <li class="nav-item">
 				    <a class="nav-link active" id="pills-semua-tab" data-toggle="pill" href="#pills-semua" role="tab" aria-controls="pills-semua" aria-selected="true">Semua</a>
@@ -51,7 +55,7 @@
 				  		<div class="row">
 				  			@foreach ($prod as $p)
 				  			<div class="col-lg-3 select-gallery" data-id="{{$p->id}}">
-				  					<img class="g-fluid" style="height: 150px !important;" src="./images-all/<?=$p->imagePath?>" alt="">	<br> 
+				  					<img class="g-fluid" style="height: 150px !important;" src="../images-all/<?=$p->imagePath?>" alt="">	<br> 
 				  					<p>{{ Str::limit($p->name,20) }} <span class="float-right" ><i class="fa fa-heart"></i> {{$p->like}}</span></p>
 				  			</div>
 				  				
@@ -65,7 +69,7 @@
 				  		
 				  			@foreach ($prod->where('category','construction') as $p)
 					  			<div class="col-lg select-gallery" data-id="{{$p->id}}">
-					  					<img class="img-fluid" style="height: 150px !important;" src="./images-all/<?=$p->imagePath?>" alt="">	<br> 
+					  					<img class="img-fluid" style="height: 150px !important;" src="../images-all/<?=$p->imagePath?>" alt="">	<br> 
 					  					<p>{{ Str::limit($p->name,20) }} <span class="float-right" ><i class="fa fa-heart"></i> {{$p->like}}</span></p>
 					  			</div>
 				  				
@@ -78,7 +82,7 @@
 				  			@foreach ($prod->where('category','android') as $p)
 				  			
 					  			<div class="col-lg select-gallery" data-id="{{$p->id}}">
-					  					<img class="img-fluid" style="height: 150px !important;" src="./images-all/<?=$p->imagePath?>" alt="">	<br> 
+					  					<img class="img-fluid" style="height: 150px !important;" src="../images-all/<?=$p->imagePath?>" alt="">	<br> 
 					  					<p>{{ Str::limit($p->name,20) }} <span class="float-right" ><i class="fa fa-heart"></i> {{$p->like}}</span></p>
 					  			</div>
 				  				
@@ -90,7 +94,7 @@
 				  		
 				  			@foreach ($prod->where('category','web') as $p)
 					  			<div class="col-lg select-gallery" data-id="{{$p->id}}">
-					  					<img class="img-fluid" style="height: 150px !important;" src="./images-all/<?=$p->imagePath?>" alt="">	<br> 
+					  					<img class="img-fluid" style="height: 150px !important;" src="../images-all/<?=$p->imagePath?>" alt="">	<br> 
 					  					<p>{{ Str::limit($p->name,20) }} <span class="float-right" ><i class="fa fa-heart"></i> {{$p->like}}</span></p>
 					  			</div>
 				  				
@@ -102,7 +106,7 @@
 				  		
 				  			@foreach ($prod->where('category','desktop') as $p)
 					  			<div class="col-lg select-gallery" data-id="{{$p->id}}">
-					  					<img class="img-fluid" style="height: 150px !important;" src="./images-all/<?=$p->imagePath?>" alt="">	<br> 
+					  					<img class="img-fluid" style="height: 150px !important;" src="../images-all/<?=$p->imagePath?>" alt="">	<br> 
 					  					<p>{{ Str::limit($p->name,20) }} <span class="float-right" ><i class="fa fa-heart"></i> {{$p->like}}</span></p>
 					  			</div>
 				  				

@@ -20,7 +20,7 @@
 					<br><br>
 				</div>
 				<div class="col-lg-5 text-light" align="right">
-					<img src="./assets/image/cpi.png"  height="100" alt="">
+					<img src="../assets/image/LOGO-06.png"  height="100" alt="">
 					<div class="row justify-content-end p-4" >
 						<a href=""><img src="https://housing.virginia.edu/sites/housing.virginia.edu/files/instagram-icon-good.png" height="50" alt=""></a>
 						<a href=""><img src="https://housing.virginia.edu/sites/housing.virginia.edu/files/instagram-icon-good.png" height="50" alt=""></a>

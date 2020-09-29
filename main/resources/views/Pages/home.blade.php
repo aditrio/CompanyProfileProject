@@ -8,7 +8,7 @@
 	<div class="jumbotron jumbotron-fluid" style="background-image: url('https://64.media.tumblr.com/bc704b77de1adb08a750eba802d18e1d/tumblr_px4vmyYRPi1qzdw6bo1_1280.jpg');" >
 		<div class="container text-center text-light " style="margin-top: 200px !important;">	  	
 		    <h1 class="display-4" style="font-size: 32px">MARI KEMBANGKAN BERSAMA</h1>
-		    <button class="btn btn-light" style="border-radius: 10px;">Temukan Sekarang</button>
+		    <button onclick="location.href='/tentang';" class="btn btn-light" style="border-radius: 10px;">Temukan Sekarang</button>
 		  </div>
 	</div>
 
@@ -62,7 +62,7 @@
 				<h3><b>Tentang Kami</b></h3>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora est nam consequuntur alias officia ratione, ex vel veniam rerum et iste, vitae voluptate amet asperiores veritatis cumque ea, quas quia? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam numquam tempore explicabo tempora minus ipsam harum quis unde deserunt illum reiciendis rerum perferendis repudiandae similique eligendi sint ex voluptatum, laboriosam! Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Quod voluptatem repudiandae, eius ipsum cumque soluta maiores perferendis dicta, quo placeat dolorem, fugit corrupti eligendi quisquam labore magni amet illo iste?</p>
 				<br>
-				<button class="btn btn-light-shadow" style="border-radius: 10px;"><b>SELENGKAPNYA</b></button>
+				<button onclick="location.href='/tentang';" class="btn btn-light-shadow" style="border-radius: 10px;"><b>SELENGKAPNYA</b></button>
 			</div>
 		</div>
 	</div>
