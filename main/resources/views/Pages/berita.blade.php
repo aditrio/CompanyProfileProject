@@ -20,13 +20,18 @@
 		<br>	
 			<div class="row justify-content-center ">
 				<div class="col-lg pt-4 pb-4 " style="margin-left: -300px;">
-						<div class="img-holder click-news"data-id="{{$news[0]->id}}">
-	            <img class="img-container img-preview" src="./images-all/<?= $news[0]->imagePath ?>">
-	            <p><b>{{ Str::limit($news[0]->title),100}}</b></p>
-	            <span>{{$news[0]->created_at->format('j F, Y , h:i A')}}</span>
+					@if (!is_null($first))
+						{{-- expr --}}
+					<div class="img-holder click-news"data-id="{{$first['id']}}">
+			            <img class="img-container img-preview" src="./images-all/<?= $first['imagePath'] ?>">
+			            <p><b>{{ Str::limit($first['title']),100}}</b></p>
+			            <span>{{$first['created_at']}}</span>
      				</div>
+					@endif
 				</div>				
-					<div class="col-lg-3 pt-4 pb-4 " style="margin-left: -300px;">				
+					<div class="col-lg-3 pt-4 pb-4 " style="margin-left: -300px;">		
+					@if (!is_null($news))
+								{{-- expr --}}
 							@for ($i = 1; $i < count($news); $i++)
 								<div class="img-holder-sm click-news" data-id="{{$news[$i]->id}}">
 			            <img class="img-container-sm img-preview-sm" src="./images-all/<?= $news[$i]->imagePath ?>">
@@ -36,6 +41,7 @@
 		     					@break
 		     				@endif
 							@endfor					
+					@endif		
 					</div>			
 			</div>
 		</div>
@@ -54,6 +60,8 @@
 					
 				</div>
 			</div>
+			@if (!is_null($news))
+				{{-- expr --}}
 				@foreach ($news as $n)
 					<div class="row p-4 text-light click-news" data-id="{{$n->id}}" data-date="{{$n->created_at->format('j F Y , h:i A')}}">
 							
@@ -67,6 +75,7 @@
 
 					</div>
 				@endforeach
+			@endif
 		</div>
 
 			{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> --}}
@@ -85,7 +94,7 @@
       </div>
        <div class="modal-body">
        	
-       		<img id="img-modal" class="img-fluid mb-3" src="./images-all/<?=$news[0]->imagePath?>" alt="">
+       		<img id="img-modal" class="img-fluid mb-3" src="" alt="">
        		<div id="badges" class="row container">
        			
        		</div>

@@ -35,8 +35,12 @@ class HomeController extends Controller
     public function berita()
     {
         $news = News::latest()->get();
+        $firstNews = News::latest()->first();
 
-        return view('Pages.berita',['news' => $news]);
+        return view('Pages.berita',[
+            'news' => $news,
+            'first' => $firstNews
+        ]);
     }
 
     public function gallery()
@@ -46,7 +50,7 @@ class HomeController extends Controller
         return view('Pages.gallery',['prod' => $prod]);
     }
 
-    public function getBy($by)
+    public function getBy($by) 
     {
         $data = null;
 

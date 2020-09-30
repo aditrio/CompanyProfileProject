@@ -66,8 +66,11 @@
 									    {{Auth::user()->name }}
 									  </button>
 									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									    <a class="dropdown-item" href="{{ Auth::logout()}}">Logout</a>
-								
+									    {{-- <a class="dropdown-item" href="{{ Auth::logout()}}">Logout</a> --}}
+										<form id="frm-logout" action="{{ route('logout') }}" method="POST">
+										    {{ csrf_field() }}
+										    <button class="dropdown-item" type="submit">Logout</button>
+										</form>
 									  </div>
 									</div>
 								
