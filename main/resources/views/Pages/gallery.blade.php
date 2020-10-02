@@ -22,7 +22,7 @@
 				<ul class="nav nav-pills mb-3 p-3" id="pills-tab" role="tablist">
 					<li class="pr-5">
 						<select id="inputState" class="form-control select-prod">
-					        <option selected disabled="">Choose...</option>
+					        <option selected disabled="">Pilih...</option>
 					        <option value="popular">Popular</option>
 					        <option value="news">Newest</option>
 		        </select>
@@ -54,10 +54,19 @@
 				  <div class="tab-pane fade show active" id="pills-semua" role="tabpanel" aria-labelledby="pills-semua-tab">
 				  		<div class="row">
 				  			@foreach ($prod as $p)
-				  			<div class="col-lg-3 select-gallery" data-id="{{$p->id}}">
-				  					<img class="g-fluid" style="height: 150px !important;" src="../images-all/<?=$p->imagePath?>" alt="">	<br> 
+				  			@if (count($prod) >= 4)
+				  				<div class="col-lg-3 p-3 select-gallery" data-id="{{$p->id}}">
+				  					<img class="img-fluid" style="height: 150px !important;" src="../images-all/<?=$p->imagePath?>" alt="">	<br> 
 				  					<p>{{ Str::limit($p->name,20) }} <span class="float-right" ><i class="fa fa-heart"></i> {{$p->like}}</span></p>
-				  			</div>
+				  				</div>	
+				  			@else	
+
+				  				<div class="col-lg p-1 select-gallery" data-id="{{$p->id}}">
+				  					<img class="img-fluid" style="height: 150px !important;" src="../images-all/<?=$p->imagePath?>" alt="">	<br> 
+				  					<p>{{ Str::limit($p->name,20) }} <span class="float-right" ><i class="fa fa-heart"></i> {{$p->like}}</span></p>
+				  				</div>	
+				  			@endif
+
 				  				
 				  			@endforeach
 

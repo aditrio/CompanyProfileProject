@@ -92,7 +92,19 @@ table {
     text-decoration: none;
 }
 
+.img-circle {
+	border-radius: 10px;
 
+}
+
+table.table-striped {
+	table-layout: fixed;
+  	width: 100%;  
+}
+
+.notif-row {
+	cursor: pointer;
+}
 /*HOME PAGE*/
 
 .jumbotron {
@@ -269,7 +281,8 @@ table {
 
 
 .nav-link{
-	color : white;
+	color : white !important;
+
 }
 
 

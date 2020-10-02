@@ -69,13 +69,10 @@ $(document).ready(function() {
 
 	   $('#form-store-news').attr('action', '/news/update/' + idf);
 	   $('#method_field').val('PUT');
-
-
-	   
-
-	 
 	  
 	});
+
+
 
 
 	$('#btn-delete-news').on('click', function(e) {
@@ -180,11 +177,9 @@ $(document).ready(function() {
 
 			var id = $(this).val();
 			$('#modal-delete-product').find('#form-delete-product').attr('action', '/product/delete/' + id);
-
-
-
-
 	});
+
+	
 
 	$('#btn-app-update').click(function(event) {
 		  $('#name-prod').val('');
@@ -206,9 +201,63 @@ $(document).ready(function() {
 	});
 
 
+	// ////////////// admin page ///////////////
+	var state = 0;
+	$('#admin-edit').click(function(event) {
+		
+		if(state == 0){
+			$(this).text('cancel');
+			$('#admin-submit').attr('disabled', false);
+			$('#admin-name').attr('disabled', false);
+			$('#admin-file').attr('disabled', false);
+			state = 1;
+		}
+		else {
+			$(this).text('edit');
+			state = 0;
+			$('#admin-submit').attr('disabled', true);
+			$('#admin-name').attr('disabled', true);
+			$('#admin-file').attr('disabled', true);
+
+		}
+		
+		console.log(state);
+	});
+
+		for (var i = $('td.status-read').length - 1; i >= 0; i--) {
+			if ($('.status-read').eq(i).data('has_read') == '0') 
+			{
+				$('.status-read').eq(i).attr('style', 'background-color: #ffed4a;');
+			}
+			else {
+				$('.status-read').eq(i).attr('style', 'background-color: #38c172;');
+			}
+		}
+
+		
+
+	
+		var read = $('.material-icons').data('read');	
+		
+		if (read == '0') {
+			console.log('true')
+			$('.material-icons').text('notifications_active');
+
+		}else{
+			
+
+			$('.material-icons').text('notifications');
+			
+			
+		}
+
+	$('.material-icons').on('load', function(event) {
+		
+	});		
 	
 
 });
+
 	
 function addData(data,ids){
 		var test = '<div class="col-sm mt-2">'+

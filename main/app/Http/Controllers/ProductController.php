@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Notif;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -148,6 +149,17 @@ class ProductController extends Controller
             'like' => (string)$dataLike
 
         ]);
+
+        $message = "Seseorang menyukai proyek ".$data['name'];
+
+        Notif::create([
+
+            'prod_id' => $id,
+            'message' => $message,
+            'has_read' => "0",
+
+        ]);
+
 
         return redirect()->back();
     }

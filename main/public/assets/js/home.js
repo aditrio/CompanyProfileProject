@@ -35,7 +35,7 @@ $(document).ready(function() {
 	$('.click-news').click(function(event) {
 		$('#badges').empty();
 		var id = $(this).data("id");
-		var path = "./images-all/"
+		var path = "../images-all/"
 		var date = $(this).data('date');
 		$.ajax({
 				url: '/get/news/'+id,
@@ -84,7 +84,7 @@ $(document).ready(function() {
 	$('.select-gallery').click(function(event) {
 		$('#liked').removeClass('yes');
 		var id = $(this).data('id');
-		var path = "./images-all/";
+		var path = "../images-all/";
 		$('#form-liked').attr('action', '/like/'+id+'/product/');
 		$.ajax({
 				url: '/get/'+id+'/product',
