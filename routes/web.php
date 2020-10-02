@@ -18,6 +18,8 @@ Auth::routes();
 
 
 Route::get('/dashboard', 'DashController@index')->name('dash.index');
+Route::get('/dashboard/admin', 'DashController@admin')->name('dash.admin');
+
 
 Route::post('/news/store', 'NewsController@store')->name('news.store');
 
@@ -49,3 +51,6 @@ Route::get('/berita', 'HomeController@berita');
 Route::get('/gallery/{by}', 'HomeController@getBy');
 Route::get('/gallery', 'HomeController@gallery');
 
+
+Route::put('/user/update/{id}', 'DashController@updateUser')->name('dash.updateUser');
+Route::put('/readAll', 'DashController@readAll');
