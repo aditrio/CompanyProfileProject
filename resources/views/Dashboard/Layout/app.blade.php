@@ -55,7 +55,7 @@
 									@if ($notif->has_read == '0')
 						      			{{$notif->message}}
 						      		@else
-						      			You don't have ant notifications
+						      			You don't have any notifications
 						      		@endif
 
 									<i data-read="{{$notif->has_read}}" class="large material-icons pull-right">notifications_active</i>
