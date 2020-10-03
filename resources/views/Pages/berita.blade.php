@@ -23,7 +23,7 @@
 					@if (!is_null($first))
 						{{-- expr --}}
 					<div class="img-holder click-news"data-id="{{$first['id']}}">
-			            <img class="img-container img-preview" src="./images-all/<?= $first['imagePath'] ?>">
+			            <img class="img-container img-preview" src="../images-all/<?= $first['imagePath'] ?>">
 			            <p><b>{{ Str::limit($first['title']),100}}</b></p>
 			            <span>{{$first['created_at']}}</span>
      				</div>
@@ -34,7 +34,7 @@
 								{{-- expr --}}
 							@for ($i = 1; $i < count($news); $i++)
 								<div class="img-holder-sm click-news" data-id="{{$news[$i]->id}}">
-			            <img class="img-container-sm img-preview-sm" src="./images-all/<?= $news[$i]->imagePath ?>">
+			            <img class="img-container-sm img-preview-sm" src="../images-all/<?= $news[$i]->imagePath ?>">
 			            <p><span>{{ Str::limit($news[$i]->title),100}}</span></p>
 		     				</div>
 		     				@if ($i > 2)
@@ -66,7 +66,7 @@
 					<div class="row p-4 text-light click-news" data-id="{{$n->id}}" data-date="{{$n->created_at->format('j F Y , h:i A')}}">
 							
 						<div class="col-lg-4">
-							<img class="img-fluid" src="./images-all/<?=$n->imagePath?>" alt="">
+							<img class="img-fluid" src="../images-all/<?=$n->imagePath?>" alt="">
 						</div>		
 						<div class="col-lg text-left" >
 							<h5><b>{{$n->title}}</b></h5>							
