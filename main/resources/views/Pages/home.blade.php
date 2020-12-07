@@ -5,9 +5,10 @@
 
 @section('jumbotron')
 
-	<div class="jumbotron jumbotron-fluid" style="background-image: url('https://64.media.tumblr.com/bc704b77de1adb08a750eba802d18e1d/tumblr_px4vmyYRPi1qzdw6bo1_1280.jpg');" >
+	<div class="jumbotron jumbotron-fluid" style="background-image: url('assets/image/homebg.png');" >
 		<div class="container text-center text-light " style="margin-top: 200px !important;">	  	
-		    <h1 class="display-4" style="font-size: 32px">MARI KEMBANGKAN BERSAMA</h1>
+		    
+		    <h1 class="display-4 " style="font-size: 35px; font-weight: bold">"MARI KEMBANGKAN BERSAMA" </h1><br>
 		    <button onclick="location.href='/tentang';" class="btn btn-light" style="border-radius: 10px;">Temukan Sekarang</button>
 		  </div>
 	</div>
@@ -119,10 +120,10 @@
 			<div class="col-lg p-5">
 				<div class="card">
 					<div class="card-header img-fluid text-center">
-						<img style="border-radius: 360px;" src="./assets/image/iyori.jpeg" alt="">
+						<img style="border-radius: 360px;" width="230" height="230" src="./assets/image/person3.png" alt="">
 					</div>
 					<div class="card-body text-center">
-						<h3>Iyori Shimizu</h3>
+						<h3>David</h3>
 						<p>Lorem ipsum, </p>
 					</div>
 				</div>
@@ -130,10 +131,10 @@
 			<div class="col-lg p-5">
 				<div class="card">
 					<div class="card-header img-fluid text-center">
-						<img style="border-radius: 360px;" width="230" height="230" src="./assets/image/aimyon.jpg" alt="">
+						<img style="border-radius: 360px;" width="230" height="230" src="./assets/image/person4.png" alt="">
 					</div>
 					<div class="card-body text-center">
-						<h3>Aimyon</h3>
+						<h3>Jack</h3>
 						<p>Lorem ipsum, </p>
 					</div>
 				</div>
@@ -141,10 +142,10 @@
 			<div class="col-lg p-5">
 				<div class="card">
 					<div class="card-header img-fluid text-center">
-						<img style="border-radius: 360px;" src="./assets/image/iyori.jpeg" alt="">
+						<img style="border-radius: 360px;" width="230" height="230" src="./assets/image/person3.png" alt="">
 					</div>
 					<div class="card-body text-center">
-						<h3>Iyori Shimizu</h3>
+						<h3>Daniel</h3>
 						<p>Lorem ipsum, </p>
 					</div>
 				</div>
@@ -161,10 +162,10 @@
 			</center>
 			<div class="row">
 				<div class="img-fluid mr-3 p-2">
-					<img src="./assets/image/aimyon.jpg" style="border-radius: 360px" width="200" height="200" alt="">
+					<img src="./assets/image/person3.png" style="border-radius: 360px" width="200" height="200" alt="">
 				</div>
 				<div class="col mt-4">
-					<h4 class="mt-3"><b>Aimyon | Penyanyi OP</b></h4>
+					<h4 class="mt-3"><b>Daniel | Web Dev</b></h4>
 					<blockquote class="blockquote">
 					  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere </p>
 					  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -174,7 +175,7 @@
 			</div>
 			<div class="row">
 				<div class="col mt-4 text-right">
-					<h4 class="mt-3"><b>Aimyon | Penyanyi OP</b></h4>
+					<h4 class="mt-3"><b>Jack | Businessman</b></h4>
 					<blockquote class="blockquote">
 					  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere </p>
 					  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -182,7 +183,7 @@
 					
 				</div>
 				<div class="img-fluid mr-3 p-2">
-					<img src="./assets/image/aimyon.jpg" style="border-radius: 360px" width="200" height="200" alt="">
+					<img src="./assets/image/person4.png" style="border-radius: 360px" width="200" height="200" alt="">
 				</div>
 			</div>
 		</div>

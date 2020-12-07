@@ -3,8 +3,8 @@
 @section('title', 'Gallery')
 
 @section('jumbotron')
-	<div class="jumbotron jumbotron-fluid" style="background-image: url('https://blog.edx.org/wp-content/uploads/2017/06/Untitled-design-11.png');">
-			<div class="container text-left text-gray-dark " style="margin-top: 120px !important; width: 100%">	  	
+	<div class="jumbotron jumbotron-fluid" style="background-image: url('../assets/image/bg3.png');">
+			<div class="container text-left text-white " style="margin-top: 120px !important; width: 100%">	  	
 			    <h1 class="display-4 " style="font-size: 35px; font-weight: bold">TEMUKAN MIMPIMU </h1><br>
 			    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br> Provident nisi, eius? Corporis saepe autem consectetur omnis <br> molestias ratione numquam</p>
 			    
@@ -25,9 +25,9 @@
 					        <option selected disabled="">Pilih...</option>
 					        <option value="popular">Popular</option>
 					        <option value="news">Newest</option>
-		        </select>
-		        <form id="form-select" action="" method="get">
-		        	@csrf
+		        		</select>
+		        <form id="form-select" action="" method="GET">
+		        	
 		        	
 		        </form>
 					</li>

@@ -4,7 +4,7 @@
 
 
 @section('jumbotron')
-	<div class="jumbotron jumbotron-fluid" style="background-image: url('https://economictimes.indiatimes.com/thumb/height-450,width-600,imgsize-590602,msid-75292601/earth-safe_istock.jpg?from=mdr');">
+	<div class="jumbotron jumbotron-fluid" style="background-image: url('assets/image/bg2.png');">
 		<div class="container text-center text-light " style="margin-top: 120px !important; width: 600px">	  	
 		    <h1 class="display-4 " style="font-size: 35px; font-weight: bold">"WE DO NOT INHERIT THE WORLD FROM OUR ANCESTORS WE BORROW IT FROM OUR CHILDREN" </h1>
 		    
@@ -39,10 +39,10 @@
 			</div>
 			<div hidden="" id="slide-page-2" class="row mt-3 mb-5 slide-page">
 				<div class="col-lg-6 img-fluid mb-3">
-					<img src="./assets/image/aimyon.jpg" alt="">
+					<img  src="./assets/image/person2.jpg" alt="">
 				</div>
-				<div class="col-lg-6 p-3 text-center">
-					<div style="margin-top: 150px;">
+				<div class="col-lg-6 p-3 text-left">
+					<div style="margin-top: 150px; margin-left: 200px">
 						<h3><b>Building Future</b></h3>
 						<p>Dengan Visi Ini Kami Berharap <br> PT. GIGA dapat membangun dunia</p>
 						
@@ -52,15 +52,18 @@
 			</div>
 			<div hidden="" id="slide-page-3" class="row mt-3 mb-5 slide-page">
 				<div class="col-lg-6 img-fluid mb-3">
-					<img src="./assets/image/iyori.jpeg" height="500" alt="">
+					<img  src="./assets/image/person1.jpg" alt="">
 				</div>
-				<div class="col-lg-6 p-3 text-center">
+				<div class="col-lg-6 p-3 ">
 
-					<div style="margin-top: 100px">
+					<div  style="margin-top: 100px; margin-left: 200px">
 						<h3><b>MISI</b></h3>
-						<p>Membangun dan mengiringi <br> Perkembangan Manusia</p>
-						<p>Membantu pemerintah <br> mensejahterakan masyarakat</p>
-						<p>Memberikan layanan optimaldan dan <br> maksimal</p>
+						<div class="text-left">
+							<p>Membangun dan mengiringi <br> Perkembangan Manusia</p>
+							<p>Membantu pemerintah <br> mensejahterakan masyarakat</p>
+							<p>Memberikan layanan optimaldan dan <br> maksimal</p>	
+						</div>
+						
 						
 					</div>
 					
@@ -85,11 +88,11 @@
 					<button class="btn btn-light-shadow" style="color: #0375FF; border-top-right-radius: 50px; border-bottom-right-radius: 50px; width: 170px;"><b>SELENGKAPNYA</b></button>
 				</div>
 				<div class="col-lg-4 ">
-					<img class="mb-2" src="./assets/image/iyori.jpeg" alt="">
+					<img class="mb-2" src="./assets/image/person4.png" width="250" alt="">
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vel ipsa ducimus repudiandae libero commodi deserunt explicabo delectus </p>
 				</div>
 				<div class="col-lg-4 ">
-					<img class="mb-2" src="./assets/image/iyori.jpeg" alt="">
+					<img class="mb-2" src="./assets/image/person3.png" width="250" alt="">
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vel ipsa ducimus repudiandae libero commodi deserunt explicabo delectus Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Perferendis nulla nobis velit necessitatibus placeat incidunt delectus quaerat, laudantium sapiente </p>
 				</div>
 			</div>

@@ -7,7 +7,7 @@
 				<br>
 			</center>
 			<div class="row">
-				<div class="col-lg-2"></div>
+				
 				<div class="col-lg text-light">
 					Nama <br>
 					<input type="text" style="width: 300px; background-color: #1C1F1F"	class="text-light" id="nama">
@@ -19,6 +19,7 @@
 					<button type="button" style="width: 250px" class="btn btn-danger">Submit</button>
 					<br><br>
 				</div>
+				
 				<div class="col-lg-5 text-light" align="right">
 					<img src="../assets/image/LOGO-06.png"  height="100" alt="">
 					<div class="row justify-content-end p-4" >
