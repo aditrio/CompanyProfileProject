@@ -7,6 +7,8 @@ use App\News;
 use App\ImageUser;
 use App\User;
 use App\Product;
+use App\Message;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -40,7 +42,8 @@ class DashController extends Controller
             'products' => $products, 
             'mostProd' => $mostProd,
             'imageUser' => $image,
-            'notif' => $notif
+            'notif' => $notif,
+
 
         ]);
     }
@@ -50,13 +53,15 @@ class DashController extends Controller
         $image = ImageUser::where('user_id', Auth::id())->first();
         $notif = Notif::latest()->first();
         $notifAll = Notif::latest()->get();
+        $message = Message::latest()->get();
 
 
         return view('Dashboard.Page.admin',[
 
             'imageUser' => $image,
             'notif' => $notif,
-            'notifAll' => $notifAll
+            'notifAll' => $notifAll,
+            'message' => $message
 
 
         ]);
@@ -108,11 +113,18 @@ class DashController extends Controller
 
     }
 
+    public function readAllMessage(){
+
+        DB::table('messages')->where('status', '=', '0')->update(array('status' => '1'));
+
+
+        return redirect()->back()->with('success','Done !!');
+
+    }
+
     public static function uploadImage($req){
 
         $data = $req->file('image');
-
-        
 
         $imageName = time().'.'.$data->getClientOriginalExtension();
 

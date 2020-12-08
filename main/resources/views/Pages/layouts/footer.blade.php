@@ -9,15 +9,19 @@
 			<div class="row">
 				
 				<div class="col-lg text-light">
-					Nama <br>
-					<input type="text" style="width: 300px; background-color: #1C1F1F"	class="text-light" id="nama">
-					<br>Email <br>
-					<input type="text"style="width: 300px; background-color: #1C1F1F" class="text-light" id="nama">
-					<br>Pesan <br>
-					<textarea name="pesan" style="width: 300px; background-color: #1C1F1F" id="" class="text-light" cols="21" rows="5"></textarea><br>
+					<form action="{{ route('message.store') }}" method="post">
+						@csrf
+						@method('POST')
+						Nama <br>
+						<input type="text" name="name" style="width: 300px; background-color: #1C1F1F"	class="text-light" id="nama">
+						<br>Email <br>
+						<input type="text" name="email" style="width: 300px; background-color: #1C1F1F" class="text-light" id="nama">
+						<br>Pesan <br>
+						<textarea name="message" style="width: 300px; background-color: #1C1F1F" id="" class="text-light" cols="21" rows="5"></textarea><br>
 
-					<button type="button" style="width: 250px" class="btn btn-danger">Submit</button>
-					<br><br>
+						<button type="submit" style="width: 250px" class="btn btn-danger">Submit</button>
+						<br><br>
+					</form>
 				</div>
 				
 				<div class="col-lg-5 text-light" align="right">

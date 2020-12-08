@@ -234,6 +234,16 @@ $(document).ready(function() {
 			}
 		}
 
+		for (var i = $('td.status-read-message').length - 1; i >= 0; i--) {
+			if ($('.status-read-message').eq(i).data('status') == '0') 
+			{
+				$('.status-read-message').eq(i).attr('style', 'background-color: #ffed4a;');
+			}
+			else {
+				$('.status-read-message').eq(i).attr('style', 'background-color: #38c172;');
+			}
+		}
+
 		
 
 	

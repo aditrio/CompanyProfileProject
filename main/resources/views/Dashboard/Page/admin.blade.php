@@ -127,7 +127,70 @@
 </div>
 
 
+<div class="row">
 	
+	<div class="col-lg">
+		<div class="card border">
+			
+			<div class="card-header">
+				<h5 class="card-title"><i class="fa fa-envelope"></i>  Message</h5>
+			</div>
+
+			<div class="card-body">
+
+				<div class="row">
+		  			
+		  				
+			  			<table class="table p-2 table-striped table-responsive" style="width: 100% !important; height: 250px">
+			  				
+						  <tbody >
+						  			<tr>
+								      <th scope="row"></th>
+								      <td>Nama</td>
+								      <td>Email</td>
+								      <td>Message</td>	
+								      <td>Status</td>											      
+
+
+							    	</tr>
+						  		@foreach ($message as $me)
+						  			
+							  		<tr>
+								      <th scope="row">◉</th>
+								      <td>{{$me->name}}</td>
+								      <td>{{$me->email}}</td>
+								      <td>{{$me->message}}</td>	
+								       <td class="status-read-message" data-status="{{$me->status}}" >
+								      		@if ($me->status == '0')
+								      			Unread
+								      		@else
+								      			Read
+								      		@endif
+
+
+								      </td>												      
+
+							    	</tr>
+						  		@endforeach
+						  	
+						  </tbody>
+						</table>
+		  			</div>
+
+			</div>
+			<div class="card-footer">
+		  	<form action="/readAllMessage" method="post">
+		  		@csrf
+		  		@method('PUT')
+		  		<button type="submit" class="btn btn-success pull-right">Mark all as read</button>
+		  		
+		  	</form>
+		  </div>
+
+		</div>
+	</div>
+
+</div>
 	
 
 @endsection
